@@ -1,4 +1,4 @@
-# navigation_bar
+# navi_bar
 
 A new Flutter project.
 
