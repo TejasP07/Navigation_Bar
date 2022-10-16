@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bottom Navigation Bar Demo',
       theme: ThemeData(
-        primaryColor: Color.fromARGB(255, 248, 205, 130),
+        primaryColor: Color.fromARGB(255, 92, 246, 156),
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
@@ -37,6 +37,8 @@ class _HomePageState extends State<HomePage> {
   final pages = [
     const Page1(),
     const Page2(),
+    const Page3(),
+    const Page4(),
   ];
 
   @override
@@ -49,7 +51,7 @@ class _HomePageState extends State<HomePage> {
           color: Theme.of(context).primaryColor,
         ),
         title: Text(
-          "Navigation key Home page",
+          "Navigation key ",
           style: TextStyle(
             color: Theme.of(context).primaryColor,
             fontSize: 25,
@@ -115,6 +117,44 @@ class _HomePageState extends State<HomePage> {
                     size: 35,
                   ),
           ),
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 2;
+              });
+            },
+            icon: pageIndex == 2
+                ? const Icon(
+                    Icons.widgets_rounded,
+                    color: Colors.white,
+                    size: 35,
+                  )
+                : const Icon(
+                    Icons.widgets_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+          ),
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 3;
+              });
+            },
+            icon: pageIndex == 3
+                ? const Icon(
+                    Icons.person,
+                    color: Colors.white,
+                    size: 35,
+                  )
+                : const Icon(
+                    Icons.person_outline,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+          ),
         ],
       ),
     );
@@ -155,6 +195,48 @@ class Page2 extends StatelessWidget {
           style: TextStyle(
             color: Color.fromARGB(255, 63, 47, 17),
             fontSize: 42,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Page3 extends StatelessWidget {
+  const Page3({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xffC4DFCB),
+      child: Center(
+        child: Text(
+          "Page Number 3",
+          style: TextStyle(
+            color: Colors.green[900],
+            fontSize: 45,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Page4 extends StatelessWidget {
+  const Page4({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xffC4DFCB),
+      child: Center(
+        child: Text(
+          "Page Number 4",
+          style: TextStyle(
+            color: Colors.green[900],
+            fontSize: 45,
             fontWeight: FontWeight.w500,
           ),
         ),
