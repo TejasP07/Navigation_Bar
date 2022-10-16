@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bottom NavBar Demo',
+      title: 'Bottom Navigation Bar Demo',
       theme: ThemeData(
-        primaryColor: const Color(0xff2F8D46),
+        primaryColor: Color.fromARGB(255, 248, 205, 130),
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
 
   final pages = [
     const Page1(),
+    const Page2(),
   ];
 
   @override
@@ -65,7 +66,7 @@ class _HomePageState extends State<HomePage> {
 
   Container buildMyNavBar(BuildContext context) {
     return Container(
-      height: 60,
+      height: 50,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
         borderRadius: const BorderRadius.only(
@@ -95,6 +96,25 @@ class _HomePageState extends State<HomePage> {
                     size: 35,
                   ),
           ),
+          IconButton(
+            enableFeedback: false,
+            onPressed: () {
+              setState(() {
+                pageIndex = 1;
+              });
+            },
+            icon: pageIndex == 1
+                ? const Icon(
+                    Icons.work_rounded,
+                    color: Colors.white,
+                    size: 35,
+                  )
+                : const Icon(
+                    Icons.work_outline_outlined,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+          ),
         ],
       ),
     );
@@ -110,10 +130,31 @@ class Page1 extends StatelessWidget {
       color: const Color(0xffC4DFCB),
       child: Center(
         child: Text(
-          "Home Page No 1",
+          "Page Number 1",
           style: TextStyle(
-            color: Colors.green[900],
-            fontSize: 45,
+            color: Color.fromARGB(255, 63, 47, 17),
+            fontSize: 42,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  const Page2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: const Color(0xffC4DFCB),
+      child: Center(
+        child: Text(
+          "Page Number 2",
+          style: TextStyle(
+            color: Color.fromARGB(255, 63, 47, 17),
+            fontSize: 42,
             fontWeight: FontWeight.w500,
           ),
         ),
