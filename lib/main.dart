@@ -38,7 +38,6 @@ class _HomePageState extends State<HomePage> {
     const Page1(),
     const Page2(),
     const Page3(),
-    const Page4(),
   ];
 
   @override
@@ -136,25 +135,7 @@ class _HomePageState extends State<HomePage> {
                     size: 35,
                   ),
           ),
-          IconButton(
-            enableFeedback: false,
-            onPressed: () {
-              setState(() {
-                pageIndex = 3;
-              });
-            },
-            icon: pageIndex == 3
-                ? const Icon(
-                    Icons.person,
-                    color: Colors.white,
-                    size: 35,
-                  )
-                : const Icon(
-                    Icons.person_outline,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-          ),
+          
         ],
       ),
     );
@@ -224,23 +205,3 @@ class Page3 extends StatelessWidget {
   }
 }
 
-class Page4 extends StatelessWidget {
-  const Page4({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xffC4DFCB),
-      child: Center(
-        child: Text(
-          "Page Number 4",
-          style: TextStyle(
-            color: Colors.green[900],
-            fontSize: 45,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
-    );
-  }
-}
